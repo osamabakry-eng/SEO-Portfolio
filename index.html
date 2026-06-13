@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<!-- saved from url=(0056)file:///E:/Downloads/index-final-small-menu.html#reviews -->
+<!-- saved from url=(0044)file:///E:/Downloads/index-github-fixed.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Osama Bakry SEO Portfolio - Platform Safe Version</title>
+<title>Osama Bakry SEO Portfolio</title>
 <style>
 
 /* Final integrated navigation and mobile-friendly overrides */
@@ -1598,28 +1598,59 @@ section{scroll-margin-top:74px}
   }
 }
 
+
+/* Final GitHub Pages anchor/menu fix */
+.nav{
+  z-index:999999 !important;
+}
+.nav a{
+  pointer-events:auto !important;
+}
+.menu-toggle-control{
+  display:none !important;
+}
+@media(max-width:768px){
+  .nav-links{
+    pointer-events:auto !important;
+  }
+  .menu-toggle{
+    display:flex !important;
+    width:54px !important;
+    height:54px !important;
+    border-radius:16px !important;
+    font-size:30px !important;
+    align-items:center !important;
+    justify-content:center !important;
+    user-select:none !important;
+  }
+  .menu-toggle-control:checked ~ .nav-links,
+  .nav.nav-open .nav-links{
+    display:flex !important;
+  }
+}
+
 </style>
 </head>
 <body>
 
 <nav class="nav">
   <div class="nav-inner">
-    <a class="brand" href="file:///E:/Downloads/index-final-small-menu.html#hero">O<span>B</span></a>
+    <a class="brand" href="file:///E:/Downloads/index-github-fixed.html#hero">O<span>B</span></a>
     <input type="checkbox" id="menu-toggle-control" class="menu-toggle-control" aria-label="Open menu">
     <label class="menu-toggle" for="menu-toggle-control">☰</label>
     <ul class="nav-links">
-      <li><a href="file:///E:/Downloads/index-final-small-menu.html#hero">Home</a></li>
-      <li><a href="file:///E:/Downloads/index-final-small-menu.html#about">About</a></li>
-      <li><a href="file:///E:/Downloads/index-final-small-menu.html#results">Results</a></li>
-      <li><a href="file:///E:/Downloads/index-final-small-menu.html#expertise">Expertise</a></li>
-      <li><a href="file:///E:/Downloads/index-final-small-menu.html#case1">Cases</a></li>
-      <li><a href="file:///E:/Downloads/index-final-small-menu.html#process">Process</a></li>
-      <li><a href="file:///E:/Downloads/index-final-small-menu.html#scenarios">Industries</a></li>
-      <li><a href="file:///E:/Downloads/index-final-small-menu.html#tools">Tools</a></li>
-      <li><a href="file:///E:/Downloads/index-final-small-menu.html#reviews">Reviews</a></li>
-      <li><a href="file:///E:/Downloads/index-final-small-menu.html#contact">Availability</a></li>
+      <li><a href="file:///E:/Downloads/index-github-fixed.html#hero">Home</a></li>
+      <li><a href="file:///E:/Downloads/index-github-fixed.html#about">About</a></li>
+      <li><a href="file:///E:/Downloads/index-github-fixed.html#results">Results</a></li>
+      <li><a href="file:///E:/Downloads/index-github-fixed.html#expertise">Expertise</a></li>
+      <li><a href="file:///E:/Downloads/index-github-fixed.html#case1">Cases</a></li>
+      <li><a href="file:///E:/Downloads/index-github-fixed.html#process">Process</a></li>
+      <li><a href="file:///E:/Downloads/index-github-fixed.html#scenarios">Industries</a></li>
+      <li><a href="file:///E:/Downloads/index-github-fixed.html#tools">Tools</a></li>
+      <li><a href="file:///E:/Downloads/index-github-fixed.html#reviews">Reviews</a></li>
+      <li><a href="file:///E:/Downloads/index-github-fixed.html#contact">Availability</a></li>
     </ul>
-    <a class="nav-cta" href="file:///E:/Downloads/index-final-small-menu.html#contact">Availability</a>
+    <a class="nav-cta" href="file:///E:/Downloads/index-github-fixed.html#contact">Availability</a>
   </div>
 </nav>
 
@@ -1634,8 +1665,8 @@ section{scroll-margin-top:74px}
       <div class="headline">Fixing SEO Issues That Block Organic Growth</div>
       <p class="copy">I help websites fix crawl, indexing, and technical SEO problems that stop organic growth, then build scalable SEO systems to make execution faster, cleaner, and measurable.</p>
       <div class="actions">
-        <a class="btn primary" href="file:///E:/Downloads/index-final-small-menu.html#case1">View Case Studies</a>
-        <a class="btn secondary" href="file:///E:/Downloads/index-final-small-menu.html#about">About Me</a>
+        <a class="btn primary" href="file:///E:/Downloads/index-github-fixed.html#case1">View Case Studies</a>
+        <a class="btn secondary" href="file:///E:/Downloads/index-github-fixed.html#about">About Me</a>
       </div>
       <div class="stats">
         <div class="stat card"><div class="icon">⌖</div><b>+258%</b><span>Clicks Increase</span></div>
@@ -2164,21 +2195,26 @@ section{scroll-margin-top:74px}
 
 
 
+
+
+
+
+
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   var checkbox = document.getElementById('menu-toggle-control');
   var nav = document.querySelector('.nav');
-  var button = document.querySelector('.menu-toggle');
+  var label = document.querySelector('label.menu-toggle');
 
-  if (button && checkbox) {
-    button.addEventListener('click', function () {
+  if (label && checkbox && nav) {
+    label.addEventListener('click', function () {
       setTimeout(function () {
-        if (nav) nav.classList.toggle('nav-open', checkbox.checked);
+        nav.classList.toggle('nav-open', checkbox.checked);
       }, 0);
     });
   }
 
-  document.querySelectorAll('.nav-links a').forEach(function (link) {
+  document.querySelectorAll('.nav-links a, .nav-cta, .brand, .actions a').forEach(function (link) {
     link.addEventListener('click', function () {
       if (checkbox) checkbox.checked = false;
       if (nav) nav.classList.remove('nav-open');
@@ -2186,7 +2222,5 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
-
-
 
 </body></html>
